@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url("bodyBackground.jpg");
+            animation: stoneAnim 2s ease;
+        }
+        @keyframes stoneAnim{
+            
+            0%{
+                filter: blur(15px) brightness(10%);    
+            }
+            
+            100%{
+            filter: blur(0px) brightness(0%);
+            }
+            
+        }
+        .blurrer{
+            filter: brightness(50%);
+            animation: stoneAnim 4s ease;
+        }
+        #bodyBlur{
+            height: 100%;
+            width: 100%;
+            background-image: url("bodyBackground.jpg");
+            z-index: 1;
+        }
+        @keyframes transformCard{
+            0%{
+                width: 50%;
+                left: 25%;
+                transform: rotateZ(0deg);
+            }
+
+            50%{
+                width: 20%;
+                height: 40%;
+                top: 30%;
+                left: 40%;
+                transform: rotateZ(180deg);
+            }
+            
+            100%{
+                width: 50%;
+                left: 25%;
+                transform: rotateZ(360deg);
+            }
+            
+        }
+        .glassyCard{
+            position: relative;
+            width: 50%;
+            height: 50%;
+            left: 25%;
+            top: 25%;
+            background-color: rgba(0,0,0,0.87);
+            color: white;
+            z-index: 2;
+            border-radius: 30px;
+            
+        }
+
+        </style>
+        <script>
+        var cards;
+            function load()
+            {
+                cards=document.getElementsByClassName("glassyCard");
+                cards[0].style.animation="transformCard 2s infinite ease";
+            }
+            
+        </script>
+
+    </head>
+    <body onload="setTimeout(function(){load();},1700)">
+        <!--<div class="blurrer" id="bodyBlur"></div>-->
+        <div class="glassyCard" id="one"></div>
+               
+     
+    </body>
+    
+</html>
